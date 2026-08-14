@@ -285,8 +285,8 @@ local suppressMaximizeRule = hl.window_rule({
 hl.window_rule({ -- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
 	match = {
-		class = "^$",
-		title = "^$",
+		class = "^steam_proton$",
+		title = "^Overwatch$",
 		xwayland = true,
 		float = true,
 		fullscreen = false,
@@ -315,6 +315,12 @@ hl.window_rule({
 ------------------------------
 ---------- PLUGINS -----------
 ------------------------------
+
+package.path = package.path .. ";./?.lua;./?/init.lua"
+local smw = require("plugins.split-monitor-workspaces")
+smw.setup({
+	workspace_count = 5, -- This will create 5 persistent workspaces on each monitor at startup
+})
 
 if hl.plugin.hyprglass then
 	local hg = hl.plugin.hyprglass
