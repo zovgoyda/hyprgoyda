@@ -269,6 +269,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { title = "LACT" },
+	float = true,
+	size = {1280, 720 },
+})
+
+hl.window_rule({
 	match = { class = "steam_proton" },
 	float = true,
 	size = { 1280, 920 },
@@ -281,6 +287,11 @@ local suppressMaximizeRule = hl.window_rule({
 	suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
+hl.window_rule({
+	match = { class = "PortProton"},
+	float = true,
+})
+
 
 hl.window_rule({ -- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
@@ -327,7 +338,7 @@ if hl.plugin.hyprglass then
 
 	hg.config({
 		default_theme = "dark",
-		default_preset = "glass",
+		default_preset = "apple",
 		tint_color = 0x8899aa22,
 
 		brightness = 0.9,
