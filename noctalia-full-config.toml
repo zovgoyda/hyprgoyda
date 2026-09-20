@@ -19,10 +19,10 @@ order = [ "default" ]
 
     [bar.default]
     auto_hide = false
-    background_opacity = 1.0
+    background_opacity = 0.69999998807907104
     border = "outline"
     border_width = 0.0
-    capsule = false
+    capsule = true
     capsule_fill = "surface_variant"
     capsule_group = []
     capsule_opacity = 1.0
@@ -30,14 +30,13 @@ order = [ "default" ]
     capsule_thickness = 0.75999999046325684
     center = [ "clock" ]
     concave_edge_corners = true
-    contact_shadow = false
+    contact_shadow = true
     enabled = true
     end = [
         "media",
         "tray",
         "notifications",
         "clipboard",
-        "bluetooth",
         "volume",
         "brightness",
         "battery",
@@ -45,16 +44,19 @@ order = [ "default" ]
         "session",
         "keyboard_layout",
         "bar",
+        "mpvpaper",
         "w-engine-widget"
     ]
+    font_family = "JetBrains Mono"
+    font_scale = 1.0
     font_weight = 500
     hover_highlight = true
     layer = "top"
     margin_edge = 0
-    margin_ends = 100
+    margin_ends = 400
     margin_opposite_edge = 0
     padding = 14
-    panel_overlap = 1
+    panel_overlap = 0
     position = "top"
     radius = 12
     radius_bottom_left = 12
@@ -66,7 +68,7 @@ order = [ "default" ]
     shadow = true
     show_on_workspace_switch = true
     smart_auto_hide = false
-    start = [ "launcher", "wallpaper", "workspaces", "cpu" ]
+    start = [ "launcher", "wallpaper", "workspaces", "nextboot-selector", "cpu", "bar_2" ]
     thickness = 34
     widget_spacing = 6
 
@@ -83,6 +85,8 @@ sync_all_monitors = false
 
 [calendar]
 enabled = false
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
 refresh_minutes = 15
 
 [control_center]
@@ -94,8 +98,6 @@ sidebar_section = "compact"
 width = 700
 
     [control_center.calendar]
-    event_date_format = "%A %e %B"
-    event_time_format = "%H:%M"
     show_events_card = true
     show_week_numbers = false
 
@@ -123,11 +125,13 @@ widget_order = [
     "desktop-widget-0000000000000005",
     "desktop-widget-0000000000000006",
     "desktop-widget-0000000000000007",
-    "desktop-widget-0000000000000009"
+    "desktop-widget-0000000000000009",
+    "desktop-widget-000000000000000a",
+    "desktop-widget-000000000000000b"
 ]
 
     [desktop_widgets.grid]
-    cell_size = 16
+    cell_size = 8
     major_interval = 4
     visible = true
 
@@ -135,9 +139,11 @@ widget_order = [
     box_height = 288.0
     box_width = 416.0
     cx = 1720.0
-    cy = 384.0
+    cy = 328.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "clock"
 
@@ -151,6 +157,8 @@ widget_order = [
     cy = 352.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "weather"
 
@@ -158,12 +166,14 @@ widget_order = [
         background = false
 
     [desktop_widgets.widget.desktop-widget-0000000000000003]
-    box_height = 80.0
-    box_width = 96.0
-    cx = 3112.0
-    cy = 120.0
+    box_height = 72.0
+    box_width = 104.0
+    cx = 3132.0
+    cy = 132.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = -0.0
     type = "sysmon"
 
@@ -174,12 +184,14 @@ widget_order = [
         stat2 = "cpu_temp"
 
     [desktop_widgets.widget.desktop-widget-0000000000000004]
-    box_height = 80.0
+    box_height = 96.0
     box_width = 96.0
     cx = 3240.0
-    cy = 120.0
+    cy = 128.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "sysmon"
 
@@ -194,9 +206,11 @@ widget_order = [
     box_height = 64.0
     box_width = 96.0
     cx = 3240.0
-    cy = 176.0
+    cy = 184.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "sysmon"
 
@@ -209,10 +223,12 @@ widget_order = [
     [desktop_widgets.widget.desktop-widget-0000000000000006]
     box_height = 48.0
     box_width = 96.0
-    cx = 3112.0
-    cy = 176.0
+    cx = 3128.0
+    cy = 184.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "sysmon"
 
@@ -229,6 +245,8 @@ widget_order = [
     cy = 232.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "sysmon"
 
@@ -245,10 +263,13 @@ widget_order = [
     cy = 176.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = -0.0
     type = "label"
 
         [desktop_widgets.widget.desktop-widget-0000000000000008.settings]
+        background_opacity = 0.53000000000000003
         opacity = 1.0
         title = ""
 
@@ -259,6 +280,8 @@ widget_order = [
     cy = 80.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "label"
 
@@ -268,6 +291,42 @@ widget_order = [
         font_family = "FreeSans"
         opacity = 1.0
         title = "Системный монитор"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000a]
+    box_height = 40.0
+    box_width = 32.0
+    cx = 3060.0
+    cy = 132.0
+    enabled = true
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000a.settings]
+        background = false
+        color = "primary"
+        opacity = 1.0
+        title = "CPU"
+
+    [desktop_widgets.widget.desktop-widget-000000000000000b]
+    box_height = 24.0
+    box_width = 32.0
+    cx = 3060.0
+    cy = 188.0
+    enabled = true
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-000000000000000b.settings]
+        background = false
+        color = "primary"
+        opacity = 1.0
+        title = "GPU"
 
 [dock]
 active_monitor_only = false
@@ -400,7 +459,7 @@ sunset = ""
 [lockscreen]
 allow_empty_password = false
 blur_intensity = 0.5
-blurred_desktop = false
+blurred_desktop = true
 enabled = true
 fingerprint = true
 lock_before_suspend = true
@@ -432,6 +491,8 @@ widget_order = [
     cy = 1321.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "login_box"
 
@@ -458,6 +519,8 @@ widget_order = [
     cy = 898.0
     enabled = true
     output = "HDMI-A-1"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
@@ -484,6 +547,8 @@ widget_order = [
     cy = 898.0
     enabled = true
     output = "HDMI-A-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -510,6 +575,8 @@ widget_order = [
     cy = 384.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "clock"
 
@@ -524,6 +591,8 @@ widget_order = [
     cy = 1104.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "weather"
 
@@ -537,6 +606,8 @@ widget_order = [
     cy = 1104.0
     enabled = true
     output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
     rotation = 0.0
     type = "media_player"
 
@@ -555,6 +626,7 @@ border = true
 collapse_on_dismiss = true
 enable_daemon = true
 history_retention_hours = 0
+keep_dismissed_in_history = true
 layer = "overlay"
 max_visible = 0
 monitors = []
@@ -569,7 +641,7 @@ show_app_name = true
 background_opacity = 0.97000002861022949
 border = true
 enabled = true
-monitors = []
+monitors = [ "DP-1" ]
 offset_x = 20
 offset_y = 8
 orientation = "horizontal"
@@ -594,11 +666,15 @@ scale = 1.0
     volume_output = true
     wifi = true
 
-[plugin_settings]
+[plugin_settings."noctalia/mpvpaper"]
+video_directory = "/home/goyda/"
+
+[plugin_settings."tadomika_ari/w-engine"]
+sync_colors = false
 
 [plugins]
-auto_update = true
-enabled = [ "hy4ri/ds4-color", "icefish/phone-connect", "avivbintangaringga/nextboot-selector", "tadomika_ari/w-engine" ]
+auto_update = "all"
+enabled = [ "icefish/phone-connect", "avivbintangaringga/nextboot-selector", "tadomika_ari/w-engine" ]
 
     [[plugins.source]]
     enabled = true
@@ -613,31 +689,31 @@ enabled = [ "hy4ri/ds4-color", "icefish/phone-connect", "avivbintangaringga/next
     name = "community"
 
 [shell]
-app_icon_colorize = false
+app_icon_colorize = true
 avatar_path = "/home/goyda/SSD/Изображения/the-russian-revolutionary-vladimir-lenin-and-his-cat-1921-v0-0pou9k6bjlqz.jpg"
 button_borders = true
 card_borders = true
 clipboard_auto_paste = "off"
 clipboard_confirm_clear_history = true
 clipboard_enabled = true
-clipboard_history_max_entries = 100
+clipboard_history_max_entries = 600
 clipboard_image_action_command = ""
 clipboard_keep_from_closed_apps = true
 corner_radius_scale = 1.0
 date_format = "%A, %x"
 disable_mipmaps = false
 external_ip_enabled = false
-font_family = "sans-serif"
+font_family = "Inter Variable"
 input_borders = true
 launch_apps_as_systemd_services = false
 launch_apps_custom_command = ""
-niri_overview_type_to_launch_enabled = false
+niri_overview_type_to_launch_enabled = true
 offline_mode = false
 password_style = "random"
 polkit_agent = true
 popup_borders = true
 popup_shadows = true
-screen_time_enabled = false
+screen_time_enabled = true
 settings_show_advanced = true
 settings_window_translucent = false
 setup_wizard_enabled = true
@@ -645,6 +721,7 @@ shared_gl_context = true
 show_location = true
 telemetry_enabled = false
 time_format = "{:%H:%M}"
+umbriel_overview_type_to_launch_enabled = false
 
     [shell.animation]
     enabled = true
@@ -663,10 +740,15 @@ time_format = "{:%H:%M}"
     fetch_exchange_rates = true
     pinned = []
     provider_prefix = "/"
+    show_app_actions = false
+    show_app_origin_indicator = true
     show_icons = true
     sort_by_usage = true
 
         [shell.launcher.dmenu]
+
+        [shell.launcher.panels]
+        ignored = [ "polkit", "setup-wizard", "test", "launcher" ]
 
     [shell.mpris]
     blacklist = []
@@ -706,9 +788,12 @@ time_format = "{:%H:%M}"
     size = 32
 
     [shell.screenshot]
+    annotate = false
+    close_on_copy = true
+    close_on_save = true
     confirm_region = false
     copy_to_clipboard = true
-    directory = ""
+    directory = "/home/goyda/SSD/Screenshots"
     filename_pattern = ""
     freeze_screen = true
     pipe_command = ""
@@ -716,6 +801,7 @@ time_format = "{:%H:%M}"
     remember_last_region = false
     save_to_file = true
     show_cursor = false
+    skip_annotate_on_copy_save = false
 
     [shell.session]
     grid = false
@@ -778,6 +864,9 @@ time_format = "{:%H:%M}"
     alpha = 0.55000001192092896
     direction = "down"
 
+    [shell.window_switcher]
+    mru = false
+
 [storage]
 key_file = ""
 key_source = "secret-service"
@@ -825,8 +914,9 @@ community_palette = "Oxocarbon"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
+shell_mode = "follow"
 source = "wallpaper"
-wallpaper_scheme = "faithful"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
@@ -837,8 +927,10 @@ wallpaper_scheme = "faithful"
         "libreoffice",
         "neovim",
         "vscode",
+        "prismlauncher",
         "steam",
         "fuzzel",
+        "fastfetch",
         "hyprtoolkit",
         "yazi"
     ]
@@ -862,7 +954,7 @@ transition_on_startup = false
     enabled = false
     interval_seconds = 1800
     order = "random"
-    recursive = true
+    recursive = false
 
 [weather]
 effects = true
@@ -880,9 +972,17 @@ type = "active_window"
 [widget.bar]
 type = "icefish/phone-connect:bar"
 
+[widget.bar_2]
+type = "noctalia/wallpaper_depth:bar"
+
+[widget.clock]
+anchor = true
+type = "clock"
+
 [widget.cpu]
 stat = "cpu_usage"
 type = "sysmon"
+visualization = "none"
 
 [widget.date]
 format = "{:%a %d %b}"
@@ -906,10 +1006,14 @@ type = "lock_keys"
 
 [widget.media]
 art_size = 16.0
+hide_when_no_media = true
 max_length = 220.0
 min_length = 80.0
 title_scroll = "none"
 type = "media"
+
+[widget.mpvpaper]
+type = "noctalia/mpvpaper:mpvpaper"
 
 [widget.network_rx]
 stat = "net_rx"
@@ -918,6 +1022,9 @@ type = "sysmon"
 [widget.network_tx]
 stat = "net_tx"
 type = "sysmon"
+
+[widget.nextboot-selector]
+type = "avivbintangaringga/nextboot-selector:nextboot-selector"
 
 [widget.output_volume]
 device = "output"
