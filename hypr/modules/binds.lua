@@ -41,6 +41,8 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action
 
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
+
+
 -- closeWindowBind:set_enabled(false)
 hl.bind(
 	mainMod .. " + M",
@@ -52,10 +54,11 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
-hl.bind(
-	"Home",
-	hl.dsp.exec_cmd('grim -g "$(slurp)" - | tee ~/SSD/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy')
-)
+--hl.bind(
+--	"Home",
+--	hl.dsp.exec_cmd('grim -g "$(slurp)" - | tee ~/SSD/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy')
+--)
+hl.bind("Home", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
