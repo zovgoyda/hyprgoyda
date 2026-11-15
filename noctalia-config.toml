@@ -1,14 +1,44 @@
+[accessibility]
+high_contrast = false
+ui_scale = 1.0
+
 [audio]
+colorize_icons = true
+enable_notification_sounds = true
+enable_overdrive = false
+enable_power_sounds = true
+enable_screenshot_sounds = true
 enable_sounds = true
+enable_volume_sounds = true
+sound_theme = "freedesktop"
 sound_volume = 0.0
+
+[backdrop]
+blur_intensity = 0.5
+enabled = false
+tint_intensity = 0.30000001192092896
 
 [bar]
 order = [ "default" ]
 
     [bar.default]
-    background_opacity = 0.69999998435378075
+    auto_hide = false
+    auto_hide_delay_ms = 0
+    background_opacity = 0.69999998807907104
+    border = "outline_variant"
+    border_width = 0.0
     capsule = true
+    capsule_border_width = 1.0
+    capsule_fill = "surface_container"
+    capsule_group = []
+    capsule_opacity = 1.0
+    capsule_padding = 6.0
+    capsule_thickness = 0.75999999046325684
+    center = [ "clock" ]
+    compositor_blur = true
+    concave_edge_corners = true
     contact_shadow = true
+    enabled = true
     end = [
         "media",
         "tray",
@@ -22,28 +52,87 @@ order = [ "default" ]
         "keyboard_layout",
         "bar",
         "mpvpaper",
-        "w-engine-widget"
+        "w-engine-widget",
+        "current",
+        "bar_3"
     ]
     font_family = "JetBrains Mono"
+    font_scale = 1.0
+    font_weight = 500
+    hover_highlight = true
+    layer = "top"
+    margin_edge = 0
     margin_ends = 400
+    margin_opposite_edge = 0
+    padding = 14
     panel_overlap = 0
+    position = "top"
+    radius = 12
+    radius_bottom_left = 12
+    radius_bottom_right = 12
+    radius_top_left = 12
+    radius_top_right = 12
+    reserve_space = true
+    scale = 1.0
+    shadow = true
+    show_on_workspace_switch = true
+    show_tooltip = true
+    smart_auto_hide = false
     start = [ "launcher", "wallpaper", "workspaces", "nextboot-selector", "cpu", "bar_2" ]
+    thickness = 34
+    widget_spacing = 6
 
-[config]
+        [bar.default.dead_zone]
 
-[[control_center.shortcuts]]
-type = "bluetooth"
+[battery]
+warning_threshold = 10
 
-[[control_center.shortcuts]]
-type = "nightlight"
+[brightness]
+enable_ddcutil = false
+ignore_mmids = []
+minimum_brightness = 0.0
+sync_all_monitors = false
 
-[[control_center.shortcuts]]
-type = "notification"
+[calendar]
+dedupe_events = false
+dedupe_ignore_patterns = []
+enabled = false
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
+refresh_minutes = 15
 
-[[control_center.shortcuts]]
-type = "power_profile"
+    [calendar.reminders]
+    all_day_digest_time = "09:00"
+    default_lead_minutes = 10
+    enabled = true
+    use_event_reminders = true
+
+[control_center]
+hidden_tabs = []
+show_session_button = true
+show_shortcut_labels = true
+sidebar = "compact"
+sidebar_section = "compact"
+width = 700
+
+    [control_center.calendar]
+    show_events_card = true
+    show_week_numbers = false
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
 
 [desktop_widgets]
+enabled = true
 schema_version = 2
 widget_order = [
     "desktop-widget-0000000000000008",
@@ -91,11 +180,12 @@ widget_order = [
 
         [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
         background = false
+        show_forecast = false
 
     [desktop_widgets.widget.desktop-widget-0000000000000003]
     box_height = 72.0
     box_width = 104.0
-    cx = 3132.0
+    cx = 3128.0
     cy = 132.0
     output = "DP-1"
     placement_height = 1440.0
@@ -110,9 +200,9 @@ widget_order = [
         stat2 = "cpu_temp"
 
     [desktop_widgets.widget.desktop-widget-0000000000000004]
-    box_height = 96.0
-    box_width = 96.0
-    cx = 3240.0
+    box_height = 88.0
+    box_width = 120.0
+    cx = 3244.0
     cy = 128.0
     output = "DP-1"
     placement_height = 1440.0
@@ -128,10 +218,10 @@ widget_order = [
         stat2 = "cpu_temp"
 
     [desktop_widgets.widget.desktop-widget-0000000000000005]
-    box_height = 64.0
-    box_width = 96.0
-    cx = 3240.0
-    cy = 184.0
+    box_height = 56.0
+    box_width = 112.0
+    cx = 3248.0
+    cy = 188.0
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -165,7 +255,7 @@ widget_order = [
     box_height = 48.0
     box_width = 192.0
     cx = 3176.0
-    cy = 232.0
+    cy = 240.0
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -215,7 +305,7 @@ widget_order = [
     [desktop_widgets.widget.desktop-widget-000000000000000a]
     box_height = 40.0
     box_width = 32.0
-    cx = 3060.0
+    cx = 3056.0
     cy = 132.0
     output = "DP-1"
     placement_height = 1440.0
@@ -232,7 +322,7 @@ widget_order = [
     [desktop_widgets.widget.desktop-widget-000000000000000b]
     box_height = 24.0
     box_width = 32.0
-    cx = 3060.0
+    cx = 3056.0
     cy = 188.0
     output = "DP-1"
     placement_height = 1440.0
@@ -246,14 +336,148 @@ widget_order = [
         opacity = 1.0
         title = "GPU"
 
+[dock]
+active_monitor_only = false
+active_opacity = 1.0
+active_scale = 1.0
+auto_hide = false
+background_opacity = 0.87999999523162842
+border = "outline_variant"
+border_width = 0.0
+colorize_icons = true
+concave_edge_corners = true
+cross_axis_padding = 8
+enabled = false
+icon_size = 48
+inactive_opacity = 0.85000002384185791
+inactive_scale = 0.85000002384185791
+item_spacing = 6
+launcher_custom_image = ""
+launcher_custom_image_colorize = false
+launcher_icon = "grid-dots"
+launcher_position = "none"
+layer = "top"
+magnification = true
+magnification_scale = 1.4500000476837158
+main_axis_padding = 16
+margin_edge = 0
+margin_ends = 0
+pinned = []
+position = "bottom"
+radius = 16
+radius_bottom_left = 16
+radius_bottom_right = 16
+radius_top_left = 16
+radius_top_right = 16
+reserve_space = true
+shadow = true
+show_dots = false
+show_instance_count = true
+show_running = true
+smart_auto_hide = false
+
 [hooks]
-wallpaper_changed = "/usr/share/sddm/themes/noctalia/sync-shell-wallpaper.sh"
+battery_charging = []
+battery_discharging = []
+battery_percentage_changed = []
+battery_plugged = []
+bluetooth_disabled = []
+bluetooth_enabled = []
+colors_changed = []
+logging_out = []
+power_profile_changed = []
+rebooting = []
+session_locked = []
+session_unlocked = []
+shutting_down = []
+started = []
+theme_mode_changed = []
+wallpaper_changed = [ "/usr/share/sddm/themes/noctalia/sync-shell-wallpaper.sh" ]
+wifi_disabled = []
+wifi_enabled = []
+
+[hot_corners]
+delay_ms = 0
+enabled = false
+
+    [hot_corners.bottom_left]
+    action = "none"
+    command = ""
+
+    [hot_corners.bottom_right]
+    action = "none"
+    command = ""
+
+    [hot_corners.top_left]
+    action = "none"
+    command = ""
+
+    [hot_corners.top_right]
+    action = "none"
+    command = ""
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 2.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    command = ""
+    enabled = false
+    locked_timeout = 0.0
+    resume_command = ""
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    command = ""
+    enabled = false
+    locked_timeout = 0.0
+    resume_command = ""
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    command = ""
+    enabled = false
+    locked_timeout = 0.0
+    resume_command = ""
+    timeout = 660.0
+
+[keybinds]
+cancel = [ "Escape" ]
+copy = [ "Ctrl+c" ]
+delete = [ "Delete" ]
+down = [ "Down" ]
+left = [ "Left" ]
+right = [ "Right" ]
+save = [ "Ctrl+s" ]
+tab_next = [ "Tab" ]
+tab_previous = [ "Shift+ISO_Left_Tab" ]
+up = [ "Up" ]
+validate = [ "Return", "KP_Enter", "space" ]
 
 [location]
-auto_locate = true
+custom_schedule = false
+latitude = 57.706899999999997
+longitude = 57.7136
+sunrise = ""
+sunset = ""
 
 [lockscreen]
+allow_empty_password = false
+blur_intensity = 0.5
 blurred_desktop = true
+edge_smoothness = 0.30000001192092896
+enabled = true
+fingerprint = true
+grace_period_seconds = 0
+lock_before_suspend = true
+monitors = []
+tint_intensity = 0.30000001192092896
+transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb", "vortex", "pixel", "diamond", "golden", "melt" ]
+transition_duration = 1500.0
+wallpaper = ""
 
 [lockscreen_widgets]
 enabled = true
@@ -277,6 +501,7 @@ widget_order = [
     box_width = 720.0
     cx = 1720.0
     cy = 1321.0
+    enabled = true
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -284,7 +509,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -304,6 +529,7 @@ widget_order = [
     box_width = 810.0
     cx = 960.0
     cy = 898.0
+    enabled = true
     output = "HDMI-A-1"
     placement_height = 0.0
     placement_width = 0.0
@@ -311,7 +537,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -331,6 +557,7 @@ widget_order = [
     box_width = 810.0
     cx = 960.0
     cy = 898.0
+    enabled = true
     output = "HDMI-A-2"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -338,7 +565,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -358,6 +585,7 @@ widget_order = [
     box_width = 432.0
     cx = 1720.0
     cy = 384.0
+    enabled = true
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -373,6 +601,7 @@ widget_order = [
     box_width = 352.0
     cx = 1544.0
     cy = 1104.0
+    enabled = true
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -387,6 +616,7 @@ widget_order = [
     box_width = 352.0
     cx = 1896.0
     cy = 1104.0
+    enabled = true
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 3440.0
@@ -396,11 +626,66 @@ widget_order = [
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
         background = false
 
+[nightlight]
+enabled = false
+force = false
+temperature_day = 6500
+temperature_night = 4000
+
 [notification]
+background_opacity = 0.97000002861022949
+border = true
+border_color = "outline_variant"
+border_width = 1.0
+collapse_on_dismiss = true
+colorize_icons = true
+enable_daemon = true
+follow_focused_output = false
+history_retention_hours = 0
+keep_dismissed_in_history = true
 layer = "overlay"
+max_visible = 0
+monitors = []
+offset_x = 20
+offset_y = 8
+position = "top_right"
+scale = 1.0
+show_actions = true
+show_app_name = true
+width = 360
 
 [osd]
+background_opacity = 0.97000002861022949
+border = true
+border_color = "outline_variant"
+border_width = 1.0
+enabled = true
+follow_focused_output = false
+hide_delay_ms = 1400
 monitors = [ "DP-1" ]
+offset_x = 20
+offset_y = 8
+orientation = "horizontal"
+position = "top_center"
+position_vertical = "top_center"
+scale = 1.0
+
+    [osd.kinds]
+    bluetooth = true
+    brightness = true
+    caffeine = true
+    dnd = true
+    keyboard_backlight = true
+    keyboard_layout = true
+    lock_keys = true
+    media = true
+    nightlight = true
+    power_profile = true
+    privacy = true
+    volume = true
+    volume_input = true
+    volume_output = true
+    wifi = true
 
 [plugin_settings."noctalia/mpvpaper"]
 video_directory = "/home/goyda/"
@@ -409,84 +694,277 @@ video_directory = "/home/goyda/"
 sync_colors = false
 
 [plugins]
-enabled = [ "icefish/phone-connect", "avivbintangaringga/nextboot-selector", "tadomika_ari/w-engine" ]
+auto_update = "all"
+enabled = [ "icefish/phone-connect", "avivbintangaringga/nextboot-selector", "tadomika_ari/w-engine", "thaer99ob/default-apps" ]
+
+    [[plugins.source]]
+    enabled = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    enabled = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
 
 [shell]
-app_icon_colorize = true
 avatar_path = "/home/goyda/SSD/Изображения/the-russian-revolutionary-vladimir-lenin-and-his-cat-1921-v0-0pou9k6bjlqz.jpg"
+button_borders = true
+card_borders = true
 clipboard_auto_paste = "off"
+clipboard_confirm_clear_history = true
 clipboard_history_max_entries = 600
+clipboard_image_action_command = ""
+corner_radius_scale = 1.0
+date_format = "%A, %x"
+disable_mipmaps = false
+external_ip_enabled = false
 font_family = "Inter Variable"
+input_borders = true
+launch_apps_as_systemd_services = false
+launch_apps_custom_command = ""
 niri_overview_type_to_launch_enabled = true
+offline_mode = false
 password_style = "random"
 polkit_agent = true
+polkit_colorize_icons = true
+popup_borders = true
+popup_shadows = true
+readline_shortcuts = false
+screen_time_colorize_icons = true
 screen_time_enabled = true
+settings_expand_all_groups = false
+settings_show_advanced = true
+settings_window_translucent = false
+setup_wizard_enabled = true
+shared_gl_context = true
+show_close_buttons = true
+show_location = true
+telemetry_enabled = false
+time_format = "{:%H:%M}"
+umbriel_audio_provider_enabled = false
+umbriel_overview_type_to_launch_enabled = false
+
+    [shell.animation]
+    enabled = true
+    speed = 1.0
 
     [shell.greeter_sync]
     auto_sync = true
 
+    [shell.keyboard_layout]
+
+    [shell.launcher]
+    app_grid = false
+    auto_paste = "auto"
+    categories = true
+    category_icons_only = false
+    colorize_icons = true
+    compact = false
+    default_view = "recent"
+    fetch_exchange_rates = true
+    layout = "full"
+    pinned = [ "Steam", "steam", "vesktop", "Lesta Game Center", "Happ" ]
+    provider_prefix = "/"
+    search_position = "bottom"
+    show_app_actions = false
+    show_app_origin_indicator = true
+    show_icons = true
+    show_session_button = true
+    show_settings_button = true
+    sort_by_usage = true
+    track_usage = true
+    width = 760
+
+        [shell.launcher.dmenu]
+
+        [shell.launcher.panels]
+        ignored = [ "polkit", "setup-wizard", "test", "launcher" ]
+
+    [shell.mpris]
+    blacklist = []
+
     [shell.panel]
+    border_color = "outline_variant"
+    border_width = 1.0
+    borders = true
+    clipboard_placement = "floating"
+    clipboard_position = "center"
+    control_center_placement = "attached"
+    control_center_position = "auto"
+    floating_layer = "overlay"
+    floating_offset = 8
+    launcher_placement = "floating"
+    launcher_position = "center"
+    list_item_background = false
+    open_near_click_clipboard = false
+    open_near_click_control_center = false
+    open_near_click_launcher = true
+    open_near_click_session = false
+    open_near_click_wallpaper = false
+    polkit_position = "center"
     session_placement = "floating"
     session_position = "center"
+    shadow = true
     transparency_mode = "glass"
+    wallpaper_placement = "attached"
+    wallpaper_position = "auto"
+    wallpaper_show_names = true
+
+    [shell.privacy]
+    cam_filter_regex = ""
+    mic_filter_regex = ""
+    screen_filter_regex = ""
 
     [shell.screen_corners]
     enabled = true
+    size = 32
 
     [shell.screenshot]
+    annotate = false
+    close_on_copy = true
+    close_on_save = true
+    confirm_region = false
+    copy_to_clipboard = true
     directory = "/home/goyda/SSD/Screenshots"
+    filename_pattern = ""
+    freeze_screen = true
+    pipe_command = ""
+    pipe_to_command = false
+    region_modifier = "none"
+    remember_last_region = false
+    save_to_file = true
+    show_cursor = false
+    skip_annotate_on_copy_save = false
 
-    [[shell.session.actions]]
-    action = "shutdown"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "1"
-    variant = "destructive"
+    [shell.session]
+    grid = false
+    grid_columns = 3
+    show_shortcuts = true
 
-    [[shell.session.actions]]
-    action = "reboot"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "2"
-    variant = "default"
+        [shell.session.power]
 
-    [[shell.session.actions]]
-    action = "lock"
-    countdown_seconds = 0.0
-    enabled = false
-    shortcut = "3"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "shutdown"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "1"
+        variant = "destructive"
 
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "3"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "reboot"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "2"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "logout"
-    countdown_seconds = 0.0
-    enabled = true
-    shortcut = "4"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = false
+        glyph = ""
+        label = ""
+        shortcut = "3"
+        variant = "default"
 
-[templates.sddm]
-input_path = "/usr/share/sddm/themes/noctalia/theme.template.conf"
-output_path = "/usr/share/sddm/themes/noctalia/theme.conf"
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "4"
+        variant = "default"
+
+    [shell.shadow]
+    alpha = 0.55000001192092896
+    direction = "down"
+
+    [shell.window_switcher]
+    colorize_icons = true
+    current_workspace_only = false
+    mru = false
+    show_all_outputs = true
+    show_app_icon = true
+    show_caption = true
+    show_count = true
+    style = "carousel"
+
+[storage]
+key_file = ""
+key_source = "secret-service"
+
+[system.monitor]
+cpu_freq_activity_threshold = 2.5
+cpu_freq_critical_threshold = 4.5
+cpu_poll_seconds = 2.0
+cpu_temp_activity_threshold = 60.0
+cpu_temp_critical_threshold = 85.0
+cpu_temp_sensor_path = ""
+cpu_usage_activity_threshold = 50.0
+cpu_usage_critical_threshold = 90.0
+disk_free_activity_threshold = 80.0
+disk_free_critical_threshold = 95.0
+disk_free_pct_activity_threshold = 80.0
+disk_free_pct_critical_threshold = 95.0
+disk_poll_seconds = 10.0
+disk_used_activity_threshold = 80.0
+disk_used_critical_threshold = 95.0
+disk_used_pct_activity_threshold = 80.0
+disk_used_pct_critical_threshold = 95.0
+enabled = true
+gpu_poll_seconds = 5.0
+gpu_temp_activity_threshold = 60.0
+gpu_temp_critical_threshold = 85.0
+gpu_usage_activity_threshold = 50.0
+gpu_usage_critical_threshold = 95.0
+gpu_vram_activity_threshold = 50.0
+gpu_vram_critical_threshold = 90.0
+memory_poll_seconds = 2.0
+net_rx_activity_threshold = 1.0
+net_rx_critical_threshold = 50.0
+net_tx_activity_threshold = 1.0
+net_tx_critical_threshold = 50.0
+network_poll_seconds = 3.0
+ram_pct_activity_threshold = 60.0
+ram_pct_critical_threshold = 90.0
+swap_pct_activity_threshold = 20.0
+swap_pct_critical_threshold = 80.0
 
 [theme]
 builtin = "Noctalia"
 community_palette = "Oxocarbon"
+custom_palette = ""
 mode = "dark"
+shell_mode = "follow"
 source = "wallpaper"
+sync_color_scheme = true
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
     community_ids = [
         "pywalfox",
-        "pywalfox-beta4",
         "discord",
         "libreoffice",
         "neovim",
@@ -496,27 +974,52 @@ wallpaper_scheme = "m3-tonal-spot"
         "fuzzel",
         "fastfetch",
         "hyprtoolkit",
+        "papirus-icons",
         "yazi"
     ]
+    enable_builtin_templates = true
+    enable_community_templates = true
 
 [wallpaper]
 directory = "/home/goyda/SSD/wallpapers"
+directory_dark = ""
+directory_light = ""
+edge_smoothness = 0.30000001192092896
+enabled = true
+fill_color = ""
+fill_mode = "crop"
+per_monitor_directories = false
 transition = []
+transition_duration = 1500.0
+transition_on_startup = false
 
-    [wallpaper.default]
-    path = "/home/goyda/SSD/wallpapers/1632688330_upf5m4l0aoo51.jpg"
+    [wallpaper.automation]
+    enabled = false
+    interval_seconds = 1800
+    order = "random"
+    recursive = false
 
     [wallpaper.last]
-    path = "/home/goyda/SSD/wallpapers/i3333.webp"
+    path = "/home/goyda/SSD/wallpapers/ср.webp"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/goyda/SSD/wallpapers/i3333.webp"
-
-    [wallpaper.monitors.HDMI-A-1]
-    path = "/home/goyda/SSD/wallpapers/i.webp"
+    path = "/home/goyda/SSD/wallpapers/ср.webp"
 
     [wallpaper.monitors.HDMI-A-2]
     path = "/home/goyda/SSD/wallpapers/1632688330_upf5m4l0aoo51.jpg"
+
+[weather]
+effects = true
+refresh_minutes = 30
+unit = "metric"
+
+[widget.active_window]
+colorize_icons = true
+icon_size = 14.0
+max_length = 260.0
+min_length = 80.0
+title_scroll = "none"
+type = "active_window"
 
 [widget.bar]
 type = "icefish/phone-connect:bar"
@@ -524,20 +1027,87 @@ type = "icefish/phone-connect:bar"
 [widget.bar_2]
 type = "noctalia/wallpaper_depth:bar"
 
+[widget.bar_3]
+type = "raycursive/discord-voice:bar"
+
 [widget.clock]
 anchor = true
+type = "clock"
 
 [widget.cpu]
+stat = "cpu_usage"
+type = "sysmon"
 visualization = "none"
 
+[widget.current]
+type = "thaer99ob/default-apps:current"
+
+[widget.date]
+format = "{:%a %d %b}"
+type = "clock"
+
+[widget.input_volume]
+device = "input"
+type = "volume"
+
+[widget.keyboard_layout]
+hide_when_single_layout = false
+type = "keyboard_layout"
+
+[widget.lock_keys]
+display = "short"
+hide_when_off = false
+show_caps_lock = true
+show_num_lock = true
+show_scroll_lock = false
+type = "lock_keys"
+
 [widget.media]
+art_size = 16.0
 hide_when_no_media = true
+max_length = 220.0
+min_length = 80.0
+title_scroll = "none"
+type = "media"
 
 [widget.mpvpaper]
 type = "noctalia/mpvpaper:mpvpaper"
 
+[widget.network_rx]
+stat = "net_rx"
+type = "sysmon"
+
+[widget.network_tx]
+stat = "net_tx"
+type = "sysmon"
+
 [widget.nextboot-selector]
 type = "avivbintangaringga/nextboot-selector:nextboot-selector"
 
+[widget.output_volume]
+device = "output"
+type = "volume"
+
+[widget.ram]
+stat = "ram_used"
+type = "sysmon"
+
+[widget.spacer]
+interactive = false
+type = "spacer"
+
+[widget.taskbar]
+colorize_icons = true
+
+[widget.temp]
+stat = "cpu_temp"
+type = "sysmon"
+
+[widget.tray]
+colorize_icons = true
+
 [widget.w-engine-widget]
 type = "tadomika_ari/w-engine:w-engine-widget"
+
+[widget.workspaces]
+colorize_icons = true
